@@ -10,3 +10,8 @@ message: "&cYou cannot use stasis during combat."
 # Whether to block ender pearl teleports with null destinations while in combat
 block-null-teleport: false
 
+# Whether to ignore vertical (Y-axis) distance when calculating teleport distance
+# When true: Only horizontal distance (X and Z axes) is measured, allowing vertical pearl throws
+# When false: Full 3D distance is measured (default behavior)
+ignore-vertical: false
+

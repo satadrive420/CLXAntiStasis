@@ -55,7 +55,20 @@ public class PlayerTeleportListener implements Listener {
 
         // Calculate the distance between from and to locations
         Location from = event.getFrom();
-        double distance = from.distance(to);
+        double distance;
+
+        // Check if we should ignore vertical distance
+        boolean ignoreVertical = plugin.getConfig().getBoolean("ignore-vertical", false);
+
+        if (ignoreVertical) {
+            // Calculate horizontal distance only (X and Z axes)
+            double deltaX = to.getX() - from.getX();
+            double deltaZ = to.getZ() - from.getZ();
+            distance = Math.sqrt(deltaX * deltaX + deltaZ * deltaZ);
+        } else {
+            // Calculate full 3D distance
+            distance = from.distance(to);
+        }
 
         // Get the maximum allowed distance from config
         double maxDistance = plugin.getConfig().getDouble("max-distance", 64.0);
