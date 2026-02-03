@@ -1,10 +1,10 @@
 # AntiStasis Configuration
 
 # Maximum distance in blocks that a player can teleport with an ender pearl while in combat
-max-distance: 64
+# Default is 216 blocks to factor in trident super pearls.
+max-distance: 216
 
-# Message sent to players when they try to teleport too far while in combat
-# Color codes are supported using & (e.g., &c for red, &a for green)
+# Message displayed to players when they attempt to stasis while in combat
 message: "&cYou cannot use stasis during combat."
 
 # Whether to block ender pearl teleports with null destinations while in combat
