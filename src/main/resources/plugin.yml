@@ -1,0 +1,19 @@
+name: AntiStasis
+version: '1.0-SNAPSHOT'
+main: gg.corn.antiStasis.AntiStasis
+api-version: '1.21'
+depend: [CombatLogX]
+
+commands:
+  antistasis:
+    description: AntiStasis main command
+    usage: /antistasis reload
+    aliases: [as]
+
+permissions:
+  antistasis.bypass:
+    description: Bypass ender pearl teleport restrictions while in combat
+    default: op
+  antistasis.reload:
+    description: Reload the AntiStasis configuration
+    default: op
